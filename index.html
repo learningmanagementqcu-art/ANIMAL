@@ -1,1 +1,201 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Animated Website</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(-45deg, #090979, #00d4ff, #7928ca, #090979);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    color: white;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    animation: slideDown 1s ease;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00ffff;
+}
+
+.container {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: clamp(40px, 8vw, 70px);
+    animation: fadeUp 1.5s ease;
+}
+
+h1 span {
+    color: #00ffff;
+    text-shadow: 0 0 20px #00ffff;
+}
+
+p {
+    font-size: 18px;
+    margin: 20px 0 30px;
+    animation: fadeUp 2s ease;
+}
+
+button {
+    padding: 15px 35px;
+    border: 2px solid white;
+    border-radius: 30px;
+    background: transparent;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.4s;
+    animation: fadeUp 2.5s ease;
+}
+
+button:hover {
+    background: white;
+    color: #090979;
+    box-shadow: 0 0 25px white;
+    transform: scale(1.1);
+}
+
+.circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    animation: float 6s infinite ease-in-out;
+    z-index: -1;
+}
+
+.circle:nth-child(1) {
+    top: 20%;
+    left: 10%;
+}
+
+.circle:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    bottom: 10%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.circle:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    top: 65%;
+    left: 25%;
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-40px) rotate(180deg); }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+
+<nav>
+    <div class="logo">MY WEBSITE.</div>
+    <div>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>WELCOME TO <span>MY WEBSITE</span></h1>
+    <p>Explore something amazing. Simple, creative, and beautiful.</p>
+    <button onclick="showMessage()">Get Started</button>
+</div>
+
+<footer>
+    © 2026 My Website | All Rights Reserved
+</footer>
+
+<script>
+function showMessage() {
+    alert("Welcome! Thanks for visiting my website!");
+}
+</script>
+
+</body>
+</html>
